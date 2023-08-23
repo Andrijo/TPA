@@ -1,0 +1,25 @@
+package Paquetinho;
+
+import javax.swing.JFrame;
+
+/**
+ *
+ * @author invitado
+ */
+public class WithoutHerenciasinha {
+    
+    JFrame op;
+    
+    public WithoutHerenciasinha() {
+        op = new JFrame("Framework without herencia");
+        op.setVisible(true);
+        op.setSize(800, 400);
+        op.setLocationRelativeTo(null);
+        op.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    
+    public static void main(String[] args) {
+        WithoutHerenciasinha opp = new WithoutHerenciasinha();
+        
+    }
+}
