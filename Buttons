@@ -1,0 +1,57 @@
+package Paquetinho;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Andy Espino
+ */
+public class Buttons extends JFrame {
+
+    JLabel lbl_name;
+    JTextField txt_name;
+    JButton bttn_exit;
+
+    public Buttons() {
+        super("Botones en frames");
+
+        lbl_name = new JLabel("Nombre de la persona");
+        txt_name = new JTextField(20);
+        bttn_exit = new JButton("Salir");
+
+        this.setLayout(null);
+
+        /*
+         int coordX =) 10;
+         in separacion = 10;
+         int ancho:abel
+         */
+        int coordX = 10;
+        int padding = 10;
+        int width_label = lbl_name.getPreferredSize().width;
+        lbl_name.setBounds(coordX, 10, width_label, 20);
+        coordX += width_label + padding;
+        txt_name.setBounds(coordX, 10, 120, 20);
+        coordX += 120 + padding;
+        bttn_exit.setBounds(coordX, 10, 120, 20);
+
+        this.add(lbl_name);
+        this.add(txt_name);
+        this.add(bttn_exit);
+
+        this.setSize(800, 400);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+    }
+
+    public static void main(String a[]) {
+        //Creación del objeto
+        //Buttons boton = new Buttons();
+        new Buttons().setVisible(true);
+    }
+}
