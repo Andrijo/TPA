@@ -1,0 +1,104 @@
+package Unidadsinha;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JMenuBar;
+//import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollBar;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Andy Espino Cabrales
+ */
+public class Components extends JFrame {
+
+    JLabel lbl_name;
+    JTextField txt_name;
+    JButton bttn_exit;
+    JComboBox cmbbx_options;
+    JList lst_list;
+    JMenuBar mnb_menu;
+    JScrollBar scl_bar;
+    JRadioButton rdb_bttn;
+    JCheckBox chk_box;
+    //JPanel pnl_panel;
+    JFileChooser flc_file;
+
+    public Components() {
+        super("10 componentes en un solo frame");
+
+        lbl_name = new JLabel("Nombre: ");
+        txt_name = new JTextField(20);
+        bttn_exit = new JButton("Salir");
+        cmbbx_options = new JComboBox();
+        lst_list = new JList();
+        mnb_menu = new JMenuBar();
+        scl_bar = new JScrollBar();
+        rdb_bttn = new JRadioButton();
+        chk_box = new JCheckBox();
+        //pnl_panel = new JPanel();
+        flc_file = new JFileChooser();
+
+        //Alineaci贸n de los componentes
+        int coordX = 10;
+        int padding = 10;
+        int width_label = lbl_name.getPreferredSize().width;
+
+        lbl_name.setBounds(coordX, 10, width_label, 20);
+        coordX += width_label + padding;
+        txt_name.setBounds(coordX, 10, 120, 20);
+        coordX += 120 + padding;
+        bttn_exit.setBounds(coordX, 10, 120, 20);
+        coordX += 120 + padding;
+        cmbbx_options.setBounds(coordX, 10, 120, 20);
+        coordX = 10;
+        coordX += padding;
+        lst_list.setBounds(coordX, 50, 120, 20);
+        coordX += 120 + padding;
+        mnb_menu.setBounds(coordX, 50, 120, 20);
+        coordX += 120 + padding;
+        scl_bar.setBounds(coordX, 50, 120, 20);
+        coordX = 10;
+        coordX += padding;
+        rdb_bttn.setBounds(coordX, 90, 120, 20);
+        coordX += 120 + padding;
+        chk_box.setBounds(coordX, 90, 120, 20);
+        coordX += 120 + padding;
+        flc_file.setBounds(coordX, 90, 200, 200);
+
+        //setBounds(x, y, ancho, alto);
+        this.setLayout(null);
+
+        this.setResizable(false); //Redimensi贸n de ventana
+        this.setSize(500, 500); //Tama帽o de la ventana
+        this.setLocationRelativeTo(null); //Centrar ventana
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Funci贸n al cerrar la ventana
+
+        //Adiciones al frame
+        this.add(lbl_name);
+        this.add(txt_name);
+        this.add(bttn_exit);
+        this.add(cmbbx_options);
+        this.add(lst_list);
+        this.add(mnb_menu);
+        this.add(scl_bar);
+        this.add(rdb_bttn);
+        this.add(chk_box);
+        this.add(flc_file);
+
+    }
+
+    public static void main(String[] args) {
+        //Creaci贸n de objeto\
+        Components op = new Components();
+        new Components().setVisible(true);
+    }
+}
