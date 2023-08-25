@@ -1,0 +1,53 @@
+package Paquetinho;
+
+/**
+ *
+ * @author invitado
+ */
+public class Rectangle {
+
+    //Atributos
+    private int base;
+    private int high;
+
+    //Constructor
+    public Rectangle(int base, int high) {
+        this.base = base;
+        this.high = high;
+    }
+
+    public Rectangle() {
+        base = 5;
+        high = 4;
+    }
+
+    //Métodos
+    public int getBase() {
+        return base;
+    }
+
+    public void setBase(int base) {
+        this.base = base;
+    }
+
+    public int getHigh() {
+        return high;
+    }
+
+    public void setHigh(int high) {
+        this.high = high;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" + "base=" + base + ", high=" + high + '}';
+    }
+
+    public int getArea() {
+        return base * high;
+    }
+
+    public int getPerimetro() {
+        return (base + high) * 2;
+    }
+}
