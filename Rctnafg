@@ -1,38 +1,172 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Paquetinho;
+package Vista;
 
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import Modelo.Rectangle;
 
 /**
  *
  * @author invitado
  */
-public class Rectngle extends JFrame {
+public class Rectangulo extends JFrame {
 
+    JLabel lbl_title;
     JLabel lbl_base;
     JLabel lbl_high;
+    JLabel lbl_area;
+    JLabel lbl_perimetro;
+
     JTextField txt_base;
     JTextField txt_high;
+    JTextField txt_area;
+    JTextField txt_perimetro;
     JButton bttn_area;
     JButton bttn_perimetro;
     JButton bttn_exit;
+    JButton bttn_clean;
 
-    public Rectngle() {
+    Rectangle rct = new Rectangle();
+
+    public Rectangulo() {
         super("Rectángulo");
-        
+
+        //Creación de objetos
+        lbl_title = new JLabel("Rectángulo");
+        lbl_base = new JLabel("Base: ");
+        lbl_high = new JLabel("Altura: ");
+        lbl_area = new JLabel("Area: ");
+        lbl_perimetro = new JLabel("Perimetro: ");
+
+        txt_base = new JTextField(20);
+        txt_high = new JTextField(20);
+        txt_area = new JTextField(20);
+        txt_perimetro = new JTextField(20);
+
+        bttn_area = new JButton("Area");
+        bttn_perimetro = new JButton("Perimetro");
+        bttn_clean = new JButton("Limpiar");
+        bttn_exit = new JButton("Salir");
+
+        Font fnt = new Font("Algerian", Font.BOLD, 20);
+        lbl_title.setFont(fnt);
+        lbl_title.setForeground(Color.blue);
+        int width_lbl_title = lbl_title.getPreferredSize().width;
+        int coordX = (800 - width_lbl_title) / 2;
+        lbl_title.setBounds(coordX, 10, width_lbl_title, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 10;
+        int gap = 10;
+        lbl_base.setBounds(coordX, 50, 100, 20);
+        coordX += 100 + gap;
+        lbl_base.setBounds(coordX, 50, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 10;
+        lbl_high.setBounds(coordX, 90, 100, 20);
+        coordX += 100 + gap;
+        lbl_high.setBounds(coordX, 90, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 15;
+        lbl_area.setBounds(coordX, 130, 100, 20);
+        coordX += 100 + gap;
+        lbl_area.setBounds(coordX, 130, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 15;
+        lbl_perimetro.setBounds(coordX, 170, 100, 20);
+        coordX += 100 + gap;
+        lbl_perimetro.setBounds(coordX, 170, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 55;
+        txt_base.setBounds(coordX, 52, 100, 20);
+        coordX += 100 + gap;
+        txt_base.setBounds(coordX, 52, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 55;
+        txt_high.setBounds(coordX, 92, 100, 20);
+        coordX += 100 + gap;
+        txt_high.setBounds(coordX, 92, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 55;
+        txt_area.setBounds(coordX, 132, 100, 20);
+        coordX += 100 + gap;
+        txt_area.setBounds(coordX, 132, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 85;
+        txt_perimetro.setBounds(coordX, 172, 100, 20);
+        coordX += 100 + gap;
+        txt_perimetro.setBounds(coordX, 172, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 10;
+        bttn_area.setBounds(coordX, 200, 100, 20);
+        coordX += 100 + gap;
+        bttn_area.setBounds(coordX, 150, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 30;
+        bttn_perimetro.setBounds(coordX, 200, 100, 20);
+        coordX += 100 + gap;
+        bttn_perimetro.setBounds(coordX, 170, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 50;
+        bttn_exit.setBounds(coordX, 200, 100, 20);
+        coordX += 100 + gap;
+        bttn_exit.setBounds(coordX, 200, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 70;
+        bttn_clean.setBounds(coordX, 230, 100, 20);
+        coordX += 100 + gap;
+        bttn_clean.setBounds(coordX, 230, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        this.add(lbl_title);
+        this.add(lbl_base);
+        this.add(lbl_high);
+        this.add(lbl_area);
+        this.add(lbl_perimetro);
+        this.add(txt_base);
+        this.add(txt_high);
+        this.add(txt_area);
+        this.add(txt_perimetro);
+        this.add(bttn_area);
+        this.add(bttn_perimetro);
+        this.add(bttn_exit);
+        this.add(bttn_clean);
+
         this.setLayout(null);
+        this.setSize(800, 400);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
         this.setVisible(true);
+
     }
 
     public static void main(String[] args) {
-        Rectngle rct = new Rectngle();
+        Rectangulo rct = new Rectangulo();
 
     }
+
+    //Métodos
+    private void cleanText() {
+        txt_base.setText("");
+        txt_high.setText("");
+        txt_area.setText("");
+        txt_perimetro.setText("");
+    }
 }
+
