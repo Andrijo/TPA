@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import Modelo.Rectangle;
 
 /**
  *
@@ -52,11 +51,11 @@ public class Rectangulo extends JFrame {
         bttn_clean = new JButton("Limpiar");
         bttn_exit = new JButton("Salir");
 
-        Font fnt = new Font("Poppins", Font.BOLD, 15);
+        Font fnt = new Font("Roboto", Font.BOLD, 15);
         lbl_title.setFont(fnt);
         lbl_title.setForeground(Color.BLACK);
         int width_lbl_title = lbl_title.getPreferredSize().width;
-        int coordX = (800 - width_lbl_title) / 2;
+        int coordX = (550 - width_lbl_title) / 2;
         lbl_title.setBounds(coordX, 10, width_lbl_title, 20);
         //setBounds(x, y, ancho, alto);
 
@@ -109,28 +108,28 @@ public class Rectangulo extends JFrame {
         txt_perimetro.setBounds(coordX, 172, 100, 20);
         //setBounds(x, y, ancho, alto);
 
-        coordX = 10;
-        bttn_area.setBounds(coordX, 230, 100, 20);
+        coordX = 220;
+        bttn_area.setBounds(coordX, 52, 100, 20);
         coordX += 100 + gap;
-        bttn_area.setBounds(coordX, 230, 100, 20);
+        bttn_area.setBounds(coordX, 52, 100, 20);
         //setBounds(x, y, ancho, alto);
 
-        coordX = 150;
-        bttn_perimetro.setBounds(coordX, 230, 100, 20);
+        coordX = 220;
+        bttn_perimetro.setBounds(coordX, 92, 100, 20);
         coordX += 100 + gap;
-        bttn_perimetro.setBounds(coordX, 230, 100, 20);
+        bttn_perimetro.setBounds(coordX, 92, 100, 20);
         //setBounds(x, y, ancho, alto);
 
-        coordX = 290;
-        bttn_exit.setBounds(coordX, 230, 100, 20);
+        coordX = 220;
+        bttn_exit.setBounds(coordX, 132, 100, 20);
         coordX += 100 + gap;
-        bttn_exit.setBounds(coordX, 230, 100, 20);
+        bttn_exit.setBounds(coordX, 132, 100, 20);
         //setBounds(x, y, ancho, alto);
 
-        coordX = 440;
-        bttn_clean.setBounds(coordX, 230, 100, 20);
+        coordX = 220;
+        bttn_clean.setBounds(coordX, 172, 100, 20);
         coordX += 100 + gap;
-        bttn_clean.setBounds(coordX, 230, 100, 20);
+        bttn_clean.setBounds(coordX, 172, 100, 20);
         //setBounds(x, y, ancho, alto);
 
         this.add(lbl_title);
@@ -148,7 +147,7 @@ public class Rectangulo extends JFrame {
         this.add(bttn_clean);
 
         this.setLayout(null);
-        this.setSize(800, 600);
+        this.setSize(550, 300);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -162,6 +161,5 @@ public class Rectangulo extends JFrame {
 
     public static void main(String[] args) {
         Rectangulo rct = new Rectangulo();
-
     }
 }
