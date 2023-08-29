@@ -1,9 +1,5 @@
-package Paquetinho;
+package Modelo;
 
-/**
- *
- * @author invitado
- */
 public class Rectangle {
 
     //Atributos
@@ -46,6 +42,13 @@ public class Rectangle {
     public int getArea() {
         return base * high;
     }
+
+    public int getPerimetro() {
+        return (base + high) * 2;
+    }
+    
+}
+
 
     public int getPerimetro() {
         return (base + high) * 2;
