@@ -1,0 +1,38 @@
+package Fibonacci;
+
+/**
+ *
+ * @author Andyzinho
+ */
+public class Fibonacci {
+
+    //Atributos
+    private byte numeroTerminos;
+
+    //Constructor
+    public Fibonacci() {
+    }
+
+    public Fibonacci(byte numeroTerminos) {
+        this.numeroTerminos = numeroTerminos;
+    }
+
+    //Métodos 
+    public byte getNumeroTerminos() {
+        return numeroTerminos;
+    }
+
+    public void setNumeroTerminos(byte numeroTerminos) {
+        this.numeroTerminos = numeroTerminos;
+    }
+
+    public long fibonacciValor(long momento) {
+        numeroTerminos = (byte) momento;
+        return momento;
+    }
+
+    public String fibonacciSerie(String message) {
+        return message;
+    }
+
+}
