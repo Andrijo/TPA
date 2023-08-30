@@ -1,0 +1,92 @@
+package Fibonacci;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.HeadlessException;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Andyzinho
+ */
+//Pedir al usuario introducir el valor que quiere conocer
+//Mostrarlo
+public class FibonacciApp extends JFrame {
+
+    Fibonacci fbnc = new Fibonacci();
+
+    //Interfaz grafica
+    JLabel lbl_title;
+    JLabel lbl_value;
+    JLabel lbl_show;
+    JTextField txt_value;
+    JTextArea txt_show;
+
+    public FibonacciApp() throws HeadlessException {
+        super("Serie de Fibonacci");
+
+        //Creación de los objetos
+        lbl_title = new JLabel("Serie de Fibonacci");
+        lbl_value = new JLabel("Valor: ");
+        lbl_show = new JLabel("Serie: ");
+        txt_value = new JTextField(20);
+        txt_show = new JTextArea();
+
+        //Estilos
+        Font fnt = new Font("Roboto", Font.BOLD, 15);
+        lbl_title.setFont(fnt);
+        lbl_title.setForeground(Color.BLACK);
+        int width_lbl_title = lbl_title.getPreferredSize().width;
+        int coordX = (550 - width_lbl_title) / 2;
+        lbl_title.setBounds(coordX, 10, width_lbl_title, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 10;
+        int gap = 10;
+        lbl_value.setBounds(coordX, 50, 100, 20);
+        coordX += 100 + gap;
+        lbl_value.setBounds(coordX, 50, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 10;
+        lbl_show.setBounds(coordX, 90, 100, 20);
+        coordX += 100 + gap;
+        lbl_show.setBounds(coordX, 90, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 85;
+        txt_value.setBounds(coordX, 52, 140, 20);
+        coordX += 100 + gap;
+        txt_value.setBounds(coordX, 52, 140, 20);
+        //setBounds(x, y, ancho, alto);
+
+        coordX = 85;
+        txt_show.setBounds(coordX, 92, 140, 50);
+        coordX += 100 + gap;
+        txt_show.setBounds(coordX, 92, 140, 100);
+        //setBounds(x, y, ancho, alto);
+
+        //Añadir componentes
+        this.add(lbl_title);
+        this.add(lbl_value);
+        this.add(lbl_show);
+        this.add(txt_value);
+        this.add(txt_show);
+
+        this.setLayout(null);
+        this.setSize(550, 300);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.setVisible(true);
+        this.txt_show.setEditable(false);
+    }
+
+    public static void main(String[] args) {
+        FibonacciApp fbn = new FibonacciApp();
+    }
+
+}
