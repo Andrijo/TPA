@@ -3,10 +3,12 @@ package Fibonacci;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.HeadlessException;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JScrollPane;
 
 /**
  *
@@ -24,6 +26,10 @@ public class FibonacciApp extends JFrame {
     JLabel lbl_show;
     JTextField txt_value;
     JTextArea txt_show;
+    JScrollPane scrll_show;
+    JButton bttn_exit;
+    JButton bttn_show;
+    JButton bttn_clean;
 
     public FibonacciApp() throws HeadlessException {
         super("Serie de Fibonacci");
@@ -34,6 +40,9 @@ public class FibonacciApp extends JFrame {
         lbl_show = new JLabel("Serie: ");
         txt_value = new JTextField(20);
         txt_show = new JTextArea();
+        bttn_exit = new JButton("Salir");
+        bttn_show = new JButton("Calcular");
+        bttn_clean = new JButton("Limpiar");
 
         //Estilos
         Font fnt = new Font("Roboto", Font.BOLD, 15);
@@ -69,12 +78,37 @@ public class FibonacciApp extends JFrame {
         txt_show.setBounds(coordX, 92, 140, 100);
         //setBounds(x, y, ancho, alto);
 
+        int width_bttn_clean = bttn_clean.getPreferredSize().width;
+        coordX = (550 - width_bttn_clean) / 2;
+        bttn_clean.setBounds(coordX, 212, width_bttn_clean, 20);
+        //coordX += 100 + gap;
+        //bttn_clean.setBounds(coordX, 212, 100, 20);
+        //setBounds(x, y, ancho, alto);
+
+        int width_bttn_show = bttn_show.getPreferredSize().width;
+        coordX = ((550 - width_bttn_show) / 2) - width_bttn_clean;
+        bttn_show.setBounds(coordX, 212, width_bttn_show, 20);
+        //coordX += 100 + gap;
+        //bttn_show.setBounds(coordX, 212, 100, 20);
+        //setBounds(x, y, ancho, alto)
+        System.out.println(width_bttn_clean);
+        int width_bttn_exit = bttn_exit.getPreferredSize().width;
+
+        coordX = ((550 - width_bttn_exit) / 2) + width_bttn_clean;
+        bttn_exit.setBounds(coordX, 212, width_bttn_exit, 20);
+       // coordX += 15 + gap;
+        //bttn_exit.setBounds(coordX, 212, 70, 20);
+        //setBounds(x, y, ancho, alto);
+
         //Añadir componentes
         this.add(lbl_title);
         this.add(lbl_value);
         this.add(lbl_show);
         this.add(txt_value);
         this.add(txt_show);
+        this.add(bttn_exit);
+        this.add(bttn_show);
+        this.add(bttn_clean);
 
         this.setLayout(null);
         this.setSize(550, 300);
@@ -90,3 +124,4 @@ public class FibonacciApp extends JFrame {
     }
 
 }
+
