@@ -43,8 +43,8 @@ public class FlowLayoutUse extends JFrame {
             System.exit(0);
         });
          
-        //FlowLayout fly = new FlowLayout(FlowLayout.LEFT_ALIGNMENT);
-        this.setLayout(new FlowLayout());
+        FlowLayout fly = new FlowLayout(FlowLayout.CENTER, 20, 20);
+        this.setLayout(fly);
         this.pack();
         //this.setSize(800, 600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -58,3 +58,4 @@ public class FlowLayoutUse extends JFrame {
         new FlowLayoutUse().setVisible(true);
     }
 }
+
